@@ -11,7 +11,7 @@ export default function App() {
 
   // ✅ EmailJS init (IMPORTANT: this must be PUBLIC KEY not email)
   useEffect(() => {
-    emailjs.init("saitejabudda@gmail.com");
+    emailjs.init("HPNC600ZzKONPW-MU");
   }, []);
 
   // Escape NO button
@@ -35,7 +35,7 @@ export default function App() {
     };
 
     emailjs
-      .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+      .send("service_0h6debi", "template_4krmymf", templateParams)
       .then(() => console.log("Email sent!"))
       .catch((err) => console.log("Email error:", err));
   };
