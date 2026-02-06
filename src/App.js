@@ -48,7 +48,7 @@ export default function App() {
 
           <div className="buttons">
             <button className="yesBtn" onClick={handleYes}>
-              YES 💖
+              YES 💖g
             </button>
 
             <button
