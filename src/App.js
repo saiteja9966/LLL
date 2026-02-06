@@ -4,17 +4,16 @@ import "./App.css";
 
 export default function App() {
   const [yesClicked, setYesClicked] = useState(false);
+  const [showFlowers, setShowFlowers] = useState(false);
 
   // NO button position
   const [noPos, setNoPos] = useState({ x: 0, y: 0 });
   const [noMoved, setNoMoved] = useState(false);
 
-  // ✅ EmailJS init (IMPORTANT: this must be PUBLIC KEY not email)
   useEffect(() => {
     emailjs.init("HPNC600ZzKONPW-MU");
   }, []);
 
-  // Escape NO button
   const escapeNo = () => {
     const maxX = window.innerWidth - 150;
     const maxY = window.innerHeight - 120;
@@ -26,18 +25,29 @@ export default function App() {
     setNoMoved(true);
   };
 
-  // YES click
   const handleYes = () => {
-    setYesClicked(true);
+    setShowFlowers(true);
 
+    // ✅ Send Email
     const templateParams = {
       message: "She said YES 💖💍",
     };
 
     emailjs
-      .send("service_0h6debi", "template_4krmymf", templateParams)
-      .then(() => console.log("Email sent!"))
-      .catch((err) => console.log("Email error:", err));
+      .send(
+        "service_0h6debi",
+        "template_4krmymf",
+        templateParams,
+        "HPNC600ZzKONPW-MU"
+      )
+      .then(() => console.log("✅ Email sent!"))
+      .catch((err) => console.log("❌ Email error:", err));
+
+    // ✅ After 2 seconds show final YES screen
+    setTimeout(() => {
+      setShowFlowers(false);
+      setYesClicked(true);
+    }, 2000);
   };
 
   return (
@@ -60,6 +70,20 @@ export default function App() {
               NO 😤
             </button>
           </div>
+
+          {/* 🌸 FLOWER POPUP */}
+          {showFlowers && (
+            <div className="flowerPopup">
+              <h2 className="flowerText">💐 For You Nannu 💖</h2>
+              <div className="flowers">
+                {Array.from({ length: 20 }).map((_, i) => (
+                  <span key={i} className="flower">
+                    🌸
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       ) : (
         <div className="yesScreen">

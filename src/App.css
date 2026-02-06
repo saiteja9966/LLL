@@ -175,3 +175,53 @@
     font-size: 16px;
   }
 }
+/* 🌸 Flower Popup */
+.flowerPopup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.flowerText {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 18px;
+}
+
+.flowers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 320px;
+}
+
+.flower {
+  font-size: 32px;
+  animation: flowerPop 0.6s infinite alternate;
+}
+
+@keyframes flowerPop {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.4);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
