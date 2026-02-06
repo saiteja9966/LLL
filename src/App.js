@@ -40,7 +40,7 @@ export default function App() {
     <div className="app">
       {!yesClicked ? (
         <div className="card">
-          <h1 className="title">💌 Will you be my Valentine? 💌</h1>
+          <h1 className="title">💌Hi Nannu Will you be my Valentine? 💌</h1>
 
           <div className="buttons">
             <button className="yesBtn" onClick={handleYes}>
