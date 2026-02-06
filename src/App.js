@@ -11,7 +11,7 @@ export default function App() {
 
   // ✅ EmailJS init (IMPORTANT: this must be PUBLIC KEY not email)
   useEffect(() => {
-    emailjs.init("YOUR_PUBLIC_KEY");
+    emailjs.init("saitejabudda@gmail.com");
   }, []);
 
   // Escape NO button
@@ -48,7 +48,7 @@ export default function App() {
 
           <div className="buttons">
             <button className="yesBtn" onClick={handleYes}>
-              YES 💖g
+              YES 💖
             </button>
 
             <button
