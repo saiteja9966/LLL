@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./App.css";
 
-// ✅ Import bouquet image
-import rose from "./assets/rose.png";
-
 export default function App() {
   const [yesClicked, setYesClicked] = useState(false);
   const [showFlowers, setShowFlowers] = useState(false);
@@ -31,6 +28,7 @@ export default function App() {
   const handleYes = () => {
     setShowFlowers(true);
 
+    // ✅ Send Email
     const templateParams = {
       message: "She said YES 💖💍",
     };
@@ -45,6 +43,7 @@ export default function App() {
       .then(() => console.log("✅ Email sent!"))
       .catch((err) => console.log("❌ Email error:", err));
 
+    // ✅ After 2 seconds show final YES screen
     setTimeout(() => {
       setShowFlowers(false);
       setYesClicked(true);
@@ -72,16 +71,17 @@ export default function App() {
             </button>
           </div>
 
-          {/* 🌹 REAL ROSE POPUP */}
+          {/* 🌸 FLOWER POPUP */}
           {showFlowers && (
             <div className="flowerPopup">
-              <h2 className="flowerText">For You Nannu 💖</h2>
-
-              <img
-                src={rose}
-                alt="Rose Bouquet"
-                className="roseImage"
-              />
+              <h2 className="flowerText">💐 For You Nannu 💖</h2>
+              <div className="flowers">
+                {Array.from({ length: 20 }).map((_, i) => (
+                  <span key={i} className="flower">
+                    🌸
+                  </span>
+                ))}
+              </div>
             </div>
           )}
         </div>

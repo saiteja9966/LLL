@@ -1,4 +1,181 @@
-/* 🌹 Popup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 18px;
+}
+
+/* Card */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 28px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ff2d55;
+  margin-bottom: 25px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.yesBtn {
+  padding: 14px 26px;
+  border: none;
+  border-radius: 14px;
+  background: #ff2d55;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 10px 20px rgba(255, 45, 85, 0.35);
+}
+
+.yesBtn:hover {
+  transform: scale(1.07);
+}
+
+/* NO button runs away */
+.noBtn {
+  padding: 14px 26px;
+  border: none;
+  border-radius: 14px;
+  background: #333;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* When it starts escaping */
+.noFloating {
+  position: fixed;
+}
+
+
+/* YES SCREEN */
+.yesScreen {
+  text-align: center;
+  width: 100%;
+}
+
+.yayText {
+  font-size: 50px;
+  font-weight: 900;
+  color: #ff2d55;
+  text-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: pop 0.6s ease;
+}
+
+.subText {
+  margin-top: 12px;
+  font-size: 18px;
+  color: white;
+  opacity: 0.95;
+}
+
+/* Pop animation */
+@keyframes pop {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Floating hearts */
+.hearts {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 22px;
+  animation: floatUp 4s linear infinite;
+  left: calc(5% + 90% * var(--i));
+}
+
+/* Random placement */
+.heart:nth-child(2n) {
+  --i: 0.2;
+}
+.heart:nth-child(3n) {
+  --i: 0.5;
+}
+.heart:nth-child(4n) {
+  --i: 0.7;
+}
+.heart:nth-child(5n) {
+  --i: 0.9;
+}
+.heart:nth-child(6n) {
+  --i: 0.35;
+}
+
+/* Float animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .yayText {
+    font-size: 40px;
+  }
+
+  .yesBtn,
+  .noBtn {
+    width: 140px;
+    font-size: 16px;
+  }
+}
+/* 🌸 Flower Popup */
 .flowerPopup {
   position: fixed;
   inset: 0;
@@ -8,8 +185,7 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  padding: 20px;
-  animation: fadeIn 0.25s ease-in-out;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .flowerText {
@@ -17,34 +193,35 @@
   font-weight: 800;
   color: white;
   margin-bottom: 18px;
-  text-align: center;
 }
 
-.roseImage {
-  width: 100%;
+.flowers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   max-width: 320px;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  animation: popIn 0.35s ease-in-out;
 }
 
-/* Animations */
+.flower {
+  font-size: 32px;
+  animation: flowerPop 0.6s infinite alternate;
+}
+
+@keyframes flowerPop {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.4);
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
-    opacity: 1;
-  }
-}
-
-@keyframes popIn {
-  from {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
     opacity: 1;
   }
 }
