@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./App.css";
-
+import rose from "./assets/rose.png";
 export default function App() {
   const [yesClicked, setYesClicked] = useState(false);
   const [showFlowers, setShowFlowers] = useState(false);
@@ -77,9 +77,10 @@ export default function App() {
               <h2 className="flowerText">💐 For You Nannu 💖</h2>
               <div className="flowers">
                 {Array.from({ length: 20 }).map((_, i) => (
-                  <span key={i} className="flower">
-                    🌸
-                  </span>
+                  // <span key={i} className="flower">
+                  //   🌸
+                  // </span>
+                  <img src={rose}/>
                 ))}
               </div>
             </div>
