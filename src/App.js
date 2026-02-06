@@ -4,25 +4,29 @@ import "./App.css";
 
 export default function App() {
   const [yesClicked, setYesClicked] = useState(false);
-  const [noPos, setNoPos] = useState({ x: 0, y: 0 });
 
-  // ✅ EmailJS init
+  // NO button position
+  const [noPos, setNoPos] = useState({ x: 0, y: 0 });
+  const [noMoved, setNoMoved] = useState(false);
+
+  // ✅ EmailJS init (IMPORTANT: this must be PUBLIC KEY not email)
   useEffect(() => {
-    emailjs.init("saitejabudda@gmail.com"); 
+    emailjs.init("YOUR_PUBLIC_KEY");
   }, []);
 
-
+  // Escape NO button
   const escapeNo = () => {
-    const maxX = window.innerWidth - 140;
+    const maxX = window.innerWidth - 150;
     const maxY = window.innerHeight - 120;
 
     const x = Math.floor(Math.random() * maxX);
     const y = Math.floor(Math.random() * maxY);
 
     setNoPos({ x, y });
+    setNoMoved(true);
   };
 
-  // ✅ When YES clicked: show animation + send email
+  // YES click
   const handleYes = () => {
     setYesClicked(true);
 
@@ -40,7 +44,7 @@ export default function App() {
     <div className="app">
       {!yesClicked ? (
         <div className="card">
-          <h1 className="title">💌Hi Nannu Will you be my Valentine? 💌</h1>
+          <h1 className="title">💌 Hi Nannu Will you be my Valentine? 💌</h1>
 
           <div className="buttons">
             <button className="yesBtn" onClick={handleYes}>
@@ -48,8 +52,8 @@ export default function App() {
             </button>
 
             <button
-              className="noBtn"
-              style={{ left: noPos.x, top: noPos.y }}
+              className={`noBtn ${noMoved ? "noFloating" : ""}`}
+              style={noMoved ? { left: noPos.x, top: noPos.y } : {}}
               onMouseEnter={escapeNo}
               onTouchStart={escapeNo}
             >

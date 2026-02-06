@@ -69,10 +69,14 @@
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
-
-  position: fixed;
   transition: 0.2s ease;
 }
+
+/* When it starts escaping */
+.noFloating {
+  position: fixed;
+}
+
 
 /* YES SCREEN */
 .yesScreen {
