@@ -282,7 +282,7 @@
 .flowerPopup {
   position: fixed;
   inset: 0;
-  background: url("./assets/Bg.jpg")
+  background: url("./assets/Bg.jpeg")
     center/cover no-repeat;
 
   display: flex;
