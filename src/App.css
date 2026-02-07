@@ -225,3 +225,27 @@
     opacity: 1;
   }
 }
+.flowerPopup {
+  width: 90%;
+  max-width: 420px;
+  margin: auto;
+  text-align: center;
+}
+
+.flowers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flowerImg {
+  width: 100%;
+  max-width: 320px;   /* same visible size on web */
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 480px) {
+  .flowerImg {
+    max-width: 260px;
+  }
+}
