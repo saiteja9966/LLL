@@ -76,29 +76,24 @@ export default function App() {
             <div className="flowerPopup">
               <h2 className="flowerText">💐 For You Nannu 💖</h2>
               <div className="flowers">
-                <img src={rose} alt="rose bouquet" className="flowerImg" />
+                 <img src={rose} alt="rose bouquet" className="flowerImg" />
               </div>
             </div>
           )}
         </div>
       ) : (
         <div className="yesScreen">
-          <h1 className="yayText">YAYYYY!! 💖🥹</h1>
-          <p className="subText">
-            You just made my whole day, my whole week, my whole year 😭✨
-          </p>
-
-          <p className="subText">
-            Now come here… Valentine’s date confirmed 💐🍫💌
-          </p>
+          <h1 className="yayText">YEAHHHH 💖💖💖</h1>
+          <p className="subText">Best answer ever 😭✨</p>
 
           <div className="hearts">
             {Array.from({ length: 40 }).map((_, i) => (
-              <span key={i} className="heart">💗</span>
+              <span key={i} className="heart">
+                💗
+              </span>
             ))}
           </div>
         </div>
-
       )}
     </div>
   );
