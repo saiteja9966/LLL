@@ -92,7 +92,7 @@ export default function App() {
         <div className="yesScreen">
            <div className="gifContainer">
             <img
-              src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyNTNsZ3J1NHk4Nmd1c3Y3ZTNocGtrZ2tyMnBxNTU0dGpmdDB1cjJ2YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AwcmOV28QPnck/giphy.gif"
+              src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyM2JrcWl6a2UwcWVhZHBkN2RncTIydG1taDJ5NXZsOGhlYzg3cGdiZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/peAFQfg7Ol6IE/giphy.gif"
               alt="valentine gif"
               className="valentineGif"
             />
