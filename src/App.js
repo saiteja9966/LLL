@@ -54,6 +54,13 @@ export default function App() {
     <div className="app">
       {!yesClicked ? (
         <div className="card">
+          <div className="gifContainer">
+            <img
+              src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyNGRwZms1Z2JxeDNxdmdlMmVybXdsMm9nMGRyOTRoa2xqMnkwZHJyZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSfrvcbz6e3n0Gvac3/giphy.gif"
+              alt="valentine gif"
+              className="valentineGif"
+            />
+          </div>
           <h1 className="title">💌 Hi Nannu Will you be my Valentine? 💌</h1>
 
           <div className="buttons">
@@ -76,7 +83,7 @@ export default function App() {
             <div className="flowerPopup">
               <h2 className="flowerText">💐 For You Nannu 💖</h2>
               <div className="flowers">
-                 <img src={rose} alt="rose bouquet" className="flowerImg" />
+                <img src={rose} alt="rose bouquet" className="flowerImg" />
               </div>
             </div>
           )}

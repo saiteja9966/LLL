@@ -268,3 +268,14 @@
     max-width: 260px;
   }
 }
+.gifContainer {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.valentineGif {
+  width: 240px; /* adjust as you like */
+  height: auto;
+  border-radius: 12px;
+}
