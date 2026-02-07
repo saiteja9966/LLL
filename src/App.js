@@ -76,12 +76,12 @@ export default function App() {
             <div className="flowerPopup">
               <h2 className="flowerText">💐 For You Nannu 💖</h2>
               <div className="flowers">
-                {Array.from({ length: 20 }).map((_, i) => (
-                  // <span key={i} className="flower">
+                {/* {Array.from({ length: 20 }).map((_, i) => ( */}
+                  {/* // <span key={i} className="flower">
                   //   🌸
-                  // </span>
+                  // </span> */}
                   <img src={rose}/>
-                ))}
+                {/* ))} */}
               </div>
             </div>
           )}
