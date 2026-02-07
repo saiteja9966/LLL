@@ -85,7 +85,7 @@ export default function App() {
                 />
               </div>
 
-              <h1 className="title">💌 Hi Nannu Will you be my Valentine? 💌</h1>
+              <h1 className="title">💌 Hi bangaruu Will you be my Valentine? 💌</h1>
 
               <div className="buttons">
                 <button className="yesBtn" onClick={handleYes}>
