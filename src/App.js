@@ -90,6 +90,13 @@ export default function App() {
         </div>
       ) : (
         <div className="yesScreen">
+           <div className="gifContainer">
+            <img
+              src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyNTNsZ3J1NHk4Nmd1c3Y3ZTNocGtrZ2tyMnBxNTU0dGpmdDB1cjJ2YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AwcmOV28QPnck/giphy.gif"
+              alt="valentine gif"
+              className="valentineGif"
+            />
+          </div>
           <h1 className="yayText">YEAHHHH 💖💖💖</h1>
           <p className="subText">Best answer ever 😭✨</p>
 
